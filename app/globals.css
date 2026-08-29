@@ -1,26 +1,181 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ------------------------------------------------------------------
+   Virella Publishers brand system
+   Colors are drawn straight from the logo: deep maroon, warm gold,
+   soft cream. Edit these values to shift the whole site at once.
+------------------------------------------------------------------ */
+@theme {
+  /* Backgrounds */
+  --color-cream: #f7f1e3;
+  --color-cream-50: #fcf8f0;
+  --color-cream-100: #f4ecd9;
+  --color-cream-200: #ece0c8;
+
+  /* Brand maroon (the "V" and wordmark) */
+  --color-maroon: #5c1d12;
+  --color-maroon-600: #4c1710;
+  --color-maroon-800: #34100b;
+  --color-maroon-950: #200a06;
+
+  /* Warm brown mid-tone */
+  --color-brown: #7c3a22;
+
+  /* Feather gold */
+  --color-gold: #c79a4c;
+  --color-gold-400: #d4a24e;
+  --color-gold-300: #e7c77e;
+  --color-gold-200: #f0deb0;
+
+  /* Ink / text */
+  --color-ink: #2e2018;
+  --color-ink-soft: #6b5a4e;
+  --color-ink-faint: #9a8a7c;
+
+  /* Radius + shadow */
+  --radius-xl2: 1.25rem;
+  --shadow-soft: 0 18px 50px -20px rgba(60, 24, 12, 0.35);
+  --shadow-card: 0 10px 30px -12px rgba(60, 24, 12, 0.18);
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-manrope);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base -------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-feature-settings: "ss01", "cv01";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-maroon);
+}
+
+::selection {
+  background-color: var(--color-gold-300);
+  color: var(--color-maroon-950);
+}
+
+/* Thin gold scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-cream-100); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 999px;
+  border: 2px solid var(--color-cream-100);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-400);
+  outline-offset: 2px;
+}
+
+@keyframes ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  /* Reveal wrappers start hidden for the scroll animation; when motion is
+     reduced there is no animation to bring them back, so force them visible. */
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Reusable pieces --------------------------------------------------- */
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-x { padding-inline: 2rem; }
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-brown);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1;
+    padding: 0.95rem 1.6rem;
+    transition: transform 0.25s var(--ease-out-soft),
+                box-shadow 0.25s var(--ease-out-soft),
+                background-color 0.25s var(--ease-out-soft),
+                color 0.25s var(--ease-out-soft);
+    cursor: pointer;
+  }
+  .btn:hover { transform: translateY(-2px); }
+
+  .btn-gold {
+    background: linear-gradient(135deg, var(--color-gold-400), var(--color-gold));
+    color: var(--color-maroon-950);
+    box-shadow: 0 14px 30px -12px rgba(199, 154, 76, 0.7);
+  }
+  .btn-gold:hover { box-shadow: 0 18px 40px -12px rgba(199, 154, 76, 0.85); }
+
+  .btn-maroon {
+    background-color: var(--color-maroon);
+    color: var(--color-cream);
+  }
+  .btn-maroon:hover { background-color: var(--color-maroon-600); }
+
+  .btn-outline {
+    border: 1.5px solid color-mix(in srgb, var(--color-maroon) 30%, transparent);
+    color: var(--color-maroon);
+    background: transparent;
+  }
+  .btn-outline:hover {
+    border-color: var(--color-maroon);
+    background-color: color-mix(in srgb, var(--color-maroon) 6%, transparent);
+  }
+
+  .card-line {
+    border: 1px solid color-mix(in srgb, var(--color-brown) 16%, transparent);
+    background: linear-gradient(180deg, var(--color-cream-50), var(--color-cream-100));
+  }
 }
