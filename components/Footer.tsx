@@ -16,12 +16,12 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-maroon-950 text-cream/75">
+    <footer className="bg-maroon-800 text-cream/80">
       <div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         {/* Brand */}
         <div>
           <Logo variant="inline" tone="light" className="text-[14px]" />
-          <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/60">
+          <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/70">
             Virella Publishers helps you write, publish, and sell your book, with one team
             that treats your story with real care from the first page to the last.
           </p>
@@ -34,7 +34,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/15 text-cream/70 transition-colors hover:border-gold/60 hover:text-gold-300"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream/80 transition-colors hover:border-gold/60 hover:text-gold-300"
                 >
                   <s.icon className="h-4 w-4" />
                 </a>
@@ -51,7 +51,7 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm">
             {navLinks.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="text-cream/65 transition-colors hover:text-cream">
+                <a href={l.href} className="text-cream/75 transition-colors hover:text-cream">
                   {l.label}
                 </a>
               </li>
@@ -67,7 +67,7 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm">
             {services.slice(0, 6).map((s) => (
               <li key={s.title}>
-                <a href="#services" className="text-cream/65 transition-colors hover:text-cream">
+                <a href="#services" className="text-cream/75 transition-colors hover:text-cream">
                   {s.title}
                 </a>
               </li>
@@ -83,7 +83,7 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm">
             {site.phonePrimary && (
               <li>
-                <a href={telLink(site.phonePrimary)} className="flex items-center gap-2.5 text-cream/65 hover:text-cream">
+                <a href={telLink(site.phonePrimary)} className="flex items-center gap-2.5 text-cream/75 hover:text-cream">
                   <Phone className="h-4 w-4 text-gold-300" />
                   {site.phonePrimary}
                 </a>
@@ -91,14 +91,14 @@ export function Footer() {
             )}
             {site.email && (
               <li>
-                <a href={`mailto:${site.email}`} className="flex items-center gap-2.5 text-cream/65 hover:text-cream">
+                <a href={`mailto:${site.email}`} className="flex items-center gap-2.5 text-cream/75 hover:text-cream">
                   <Mail className="h-4 w-4 text-gold-300" />
                   {site.email}
                 </a>
               </li>
             )}
             {site.address && (
-              <li className="flex items-center gap-2.5 text-cream/65">
+              <li className="flex items-center gap-2.5 text-cream/75">
                 <MapPin className="h-4 w-4 text-gold-300" />
                 {site.address}
               </li>
@@ -117,7 +117,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-cream/10">
-        <div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-cream/50 sm:flex-row">
+        <div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-cream/60 sm:flex-row">
           <p>
             © {year} {site.name}. All rights reserved.
           </p>

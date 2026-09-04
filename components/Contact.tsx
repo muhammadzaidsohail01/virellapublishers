@@ -14,7 +14,7 @@ export function Contact() {
           </div>
 
           <Reveal className="relative mx-auto max-w-2xl text-center">
-            <span className="eyebrow text-gold-300">Let us begin</span>
+            <span className="eyebrow text-gold-300">Lets begin</span>
             <h2 className="mt-4 text-3xl text-cream sm:text-4xl lg:text-5xl lg:leading-tight">
               Ready to see your name on a book?
             </h2>

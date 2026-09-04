@@ -3,9 +3,10 @@
   "configurations": [
     {
       "name": "virella",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "port": 3000
+      "runtimeExecutable": "F:/nodejs/node.exe",
+      "runtimeArgs": ["node_modules/next/dist/bin/next", "dev"],
+      "port": 3000,
+      "autoPort": true
     }
   ]
 }

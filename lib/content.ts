@@ -55,9 +55,9 @@ export const hero = {
 /* ---- Trust badges (below hero) ---------------------------- */
 export const trustBadges: { icon: LucideIcon; title: string; text: string }[] = [
   { icon: Clock, title: "On-time delivery", text: "Clear timelines you can plan around" },
-  { icon: Users, title: "Expert team", text: "Writers, editors, and designers in-house" },
-  { icon: ShieldCheck, title: "Money-back promise", text: "Protected by a written agreement" },
-  { icon: Headphones, title: "Support any time", text: "Real people, day and night" },
+  { icon: Users, title: "Expert team", text: "Writers, editors, and in-house designers" },
+  { icon: ShieldCheck, title: "Money-back Guarantee", text: "Protected by agreement" },
+  { icon: Headphones, title: "Support any time", text: "Available 24/7" },
 ];
 
 /* ---- Distribution / "your book, everywhere" --------------- */
@@ -104,7 +104,7 @@ export const services: Service[] = [
   {
     icon: PenLine,
     title: "Ghostwriting",
-    text: "Skilled writers turn your idea, outline, or rough notes into a finished manuscript written in your voice.",
+    text: "Skilled writers turn your idea, outline, or rough notes into a finished manuscript written according to your vision.",
   },
   {
     icon: BookOpenCheck,
@@ -112,14 +112,14 @@ export const services: Service[] = [
     text: "Line editing, copyediting, and a final proofread so every page reads clean, clear, and confident.",
   },
   {
+    icon: LayoutTemplate,
+    title: "Formatting",
+    text: "Print-ready and e-book layouts that look correct according to the standard publishing platforms.",
+  },
+  {
     icon: Palette,
     title: "Book cover design",
     text: "Custom covers built for your genre that look right on a shelf and stand out as a small thumbnail.",
-  },
-  {
-    icon: LayoutTemplate,
-    title: "Formatting & typesetting",
-    text: "Print-ready and e-book layouts that look correct on every device and feel good in the hand.",
   },
   {
     icon: Globe2,
@@ -186,10 +186,10 @@ export const process: { icon: LucideIcon; step: string; title: string; text: str
     text: "We format, design, and publish your finished book to the major stores worldwide.",
   },
   {
-    icon: ShieldCheck,
+    icon: Megaphone,
     step: "06",
-    title: "Money-back promise",
-    text: "If we do not deliver what we agreed in writing, you are protected. Confirm your own policy.",
+    title: "Marketing",
+    text: "Launch plans, ads, and honest review campaigns to help the right readers discover your book.",
   },
 ];
 
@@ -253,15 +253,15 @@ export const whyUs: { icon: LucideIcon; title: string; text: string }[] = [
 export const faqs: { q: string; a: string }[] = [
   {
     q: "Do I keep the rights to my book?",
-    a: "Yes. You own your book and all of its rights. Our name never goes on the cover unless you ask for it.",
+    a: "Yes. You will retain 100% ownership of your book, we will not charge any royalties from you.",
   },
   {
     q: "How much does it cost?",
-    a: "It depends on the length and the services you need. Message us and we will send a clear, fixed quote with no surprises. (Add your real pricing here.)",
+    a: "It depends on the length and the services you need. Message us and we will send a clear, fixed quote with no surprises.",
   },
   {
     q: "How long does it take?",
-    a: "Most books take a few months from first call to publishing. We give you a firm timeline before we start.",
+    a: "Most books take 3-4 weeks to publish, we will give you a firm timeline before we start.",
   },
   {
     q: "What if I only have an idea?",
