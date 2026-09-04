@@ -27,17 +27,17 @@ export const site = {
      --------------------------------------------------------- */
   phonePrimary: "+1 (000) 000-0000", // placeholder, please confirm
   phoneSecondary: "", // optional second number, leave "" to hide
-  email: "hello@virellapublishers.com", // placeholder, please confirm
+  email: "virellapublishers@gmail.com",
   address: "", // e.g. "Austin, Texas" - leave "" to hide
 
   /* ---------------------------------------------------------
      SOCIAL LINKS  (leave "" to hide an icon)
      --------------------------------------------------------- */
   socials: {
-    instagram: "",
-    facebook: "",
-    x: "",
-    linkedin: "",
+    instagram: "https://www.instagram.com/virellapublishers",
+    linkedin: "https://www.linkedin.com/company/virella-publishers/",
+    facebook: "https://www.facebook.com/profile.php?id=61593932793463",
+    x: "", // leave "" to hide
   },
 } as const;
 

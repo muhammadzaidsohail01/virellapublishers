@@ -6,7 +6,7 @@ import { site, whatsappLink, telLink } from "@/lib/site.config";
 export function Contact() {
   return (
     <section id="contact" className="scroll-mt-24">
-      <div className="container-x py-20 md:py-28">
+      <div className="container-x py-14 sm:py-20 md:py-28">
         <div className="relative overflow-hidden rounded-3xl bg-maroon px-6 py-16 text-cream shadow-soft md:px-16 md:py-20">
           <div aria-hidden className="pointer-events-none absolute inset-0">
             <div className="absolute -left-16 -top-16 h-64 w-64 rounded-full bg-gold/20 blur-3xl" />
@@ -15,10 +15,10 @@ export function Contact() {
 
           <Reveal className="relative mx-auto max-w-2xl text-center">
             <span className="eyebrow text-gold-300">Lets begin</span>
-            <h2 className="mt-4 text-3xl text-cream sm:text-4xl lg:text-5xl lg:leading-tight">
+            <h2 className="mt-4 text-2xl text-cream sm:text-4xl lg:text-5xl lg:leading-tight">
               Ready to see your name on a book?
             </h2>
-            <p className="mt-4 text-lg text-cream/80">
+            <p className="mt-4 text-base text-cream/80 sm:text-lg">
               Tap below to message us on WhatsApp. Tell us your idea in a sentence or two and
               we will take it from there.
             </p>

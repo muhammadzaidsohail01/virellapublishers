@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { TrustBar } from "@/components/TrustBar";
 import { About } from "@/components/About";
 import { Services } from "@/components/Services";
+import { Pricing } from "@/components/Pricing";
 import { Stats } from "@/components/Stats";
 import { Genres } from "@/components/Genres";
 import { Process } from "@/components/Process";
@@ -14,6 +15,7 @@ import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/WhatsAppButton";
+import { SocialRail } from "@/components/SocialRail";
 
 export default function Home() {
   return (
@@ -25,6 +27,7 @@ export default function Home() {
         <TrustBar />
         <About />
         <Services />
+        <Pricing />
         <Stats />
         <Genres />
         <Process />
@@ -35,6 +38,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <SocialRail />
       <FloatingWhatsApp />
     </>
   );

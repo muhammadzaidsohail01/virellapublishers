@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { Sparkles, Star, ArrowRight } from "lucide-react";
 import { BookCover } from "./BookCover";
 import { WhatsAppIcon } from "./WhatsAppButton";
-import { hero, covers } from "@/lib/content";
+import { hero, heroCovers } from "@/lib/content";
 import { whatsappLink } from "@/lib/site.config";
 
 export function Hero() {
@@ -126,20 +126,20 @@ export function Hero() {
             className="absolute left-[2%] top-[16%] w-[40%] -rotate-[10deg]"
             style={{ animation: "floaty 7s ease-in-out infinite" }}
           >
-            <BookCover cover={covers[3]} />
+            <BookCover cover={heroCovers[0]} showTag={false} sizes="180px" />
           </div>
           <div
             className="absolute right-[3%] top-[8%] w-[42%] rotate-[9deg]"
             style={{ animation: "floaty 6s ease-in-out infinite", animationDelay: "0.8s" }}
           >
-            <BookCover cover={covers[1]} />
+            <BookCover cover={heroCovers[1]} showTag={false} sizes="190px" />
           </div>
           <div
             className="absolute left-1/2 top-1/2 w-[48%] -translate-x-1/2 -translate-y-[42%]"
             style={{ animation: "floaty 8s ease-in-out infinite", animationDelay: "0.3s" }}
           >
             <div className="shadow-soft">
-              <BookCover cover={covers[0]} />
+              <BookCover cover={heroCovers[2]} showTag={false} sizes="215px" priority />
             </div>
           </div>
         </motion.div>

@@ -11,10 +11,10 @@ export function FAQ() {
 
   return (
     <section id="faq" className="scroll-mt-24">
-      <div className="container-x py-20 md:py-28">
+      <div className="container-x py-14 sm:py-20 md:py-28">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Good questions</span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-[2.75rem]">
+          <h2 className="mt-4 text-2xl sm:text-4xl lg:text-[2.75rem]">
             Answers before you even ask
           </h2>
         </Reveal>

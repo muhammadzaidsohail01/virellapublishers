@@ -9,7 +9,7 @@ export function About() {
         <Reveal>
           <div className="max-w-xl">
             <span className="eyebrow">{about.eyebrow}</span>
-            <h2 className="mt-4 text-3xl sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
+            <h2 className="mt-4 text-2xl sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
               {about.title}
             </h2>
             {about.body.map((p, i) => (

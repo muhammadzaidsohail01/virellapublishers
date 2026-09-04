@@ -5,11 +5,39 @@ import { InstagramIcon, FacebookIcon, XIcon, LinkedInIcon } from "./SocialIcons"
 import { navLinks, services } from "@/lib/content";
 import { site, whatsappLink, telLink } from "@/lib/site.config";
 
+/* Display order is deliberate: Instagram, LinkedIn, Facebook.
+   `hover` carries each network's own brand colour, echoing the coloured
+   tiles on the reference site while the resting state stays on-brand.
+   Any entry with an empty URL in site.config is dropped automatically. */
 const socialIcons = [
-  { key: "instagram", icon: InstagramIcon, href: site.socials.instagram, label: "Instagram" },
-  { key: "facebook", icon: FacebookIcon, href: site.socials.facebook, label: "Facebook" },
-  { key: "x", icon: XIcon, href: site.socials.x, label: "X" },
-  { key: "linkedin", icon: LinkedInIcon, href: site.socials.linkedin, label: "LinkedIn" },
+  {
+    key: "instagram",
+    icon: InstagramIcon,
+    href: site.socials.instagram,
+    label: "Instagram",
+    hover: "hover:border-[#E1306C] hover:text-[#E1306C]",
+  },
+  {
+    key: "linkedin",
+    icon: LinkedInIcon,
+    href: site.socials.linkedin,
+    label: "LinkedIn",
+    hover: "hover:border-[#0A66C2] hover:text-[#4DA3F5]",
+  },
+  {
+    key: "facebook",
+    icon: FacebookIcon,
+    href: site.socials.facebook,
+    label: "Facebook",
+    hover: "hover:border-[#1877F2] hover:text-[#4DA3F5]",
+  },
+  {
+    key: "x",
+    icon: XIcon,
+    href: site.socials.x,
+    label: "X",
+    hover: "hover:border-cream hover:text-cream",
+  },
 ].filter((s) => s.href);
 
 export function Footer() {
@@ -26,19 +54,25 @@ export function Footer() {
             that treats your story with real care from the first page to the last.
           </p>
           {socialIcons.length > 0 && (
-            <div className="mt-6 flex gap-3">
-              {socialIcons.map((s) => (
-                <a
-                  key={s.key}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream/80 transition-colors hover:border-gold/60 hover:text-gold-300"
-                >
-                  <s.icon className="h-4 w-4" />
-                </a>
-              ))}
+            <div className="mt-7">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-300">
+                Follow us
+              </h3>
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                {socialIcons.map((s) => (
+                  <a
+                    key={s.key}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    title={s.label}
+                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-cream/30 bg-cream/[0.06] text-cream transition-colors duration-200 ${s.hover}`}
+                  >
+                    <s.icon className="h-[18px] w-[18px]" />
+                  </a>
+                ))}
+              </div>
             </div>
           )}
         </div>

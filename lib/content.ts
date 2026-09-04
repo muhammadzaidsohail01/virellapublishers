@@ -33,6 +33,7 @@ export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
+  { label: "Pricing", href: "#pricing" },
   { label: "Genres", href: "#genres" },
   { label: "Process", href: "#process" },
   { label: "Portfolio", href: "#portfolio" },
@@ -221,27 +222,38 @@ export const testimonials: { quote: string; name: string; role: string }[] = [
   },
 ];
 
-/* ---- Portfolio (SAMPLE covers - replace with real books) -- */
+/* ---- Portfolio -------------------------------------------
+   Photography: Unsplash (free commercial licence, no attribution
+   required). Self-hosted under /public/books so the site does not
+   depend on a third-party CDN. Swap these for real client books as
+   soon as you have cover files and permission from the authors. */
 export type Cover = {
-  title: string;
-  author: string;
+  src: string;
+  /** Back cover, shown on hover. Tiles without one simply do not flip. */
+  back?: string;
+  alt: string;
   tag: string;
-  from: string; // gradient start
-  to: string; // gradient end
-  ink: string; // text color on the cover
 };
 
 export const covers: Cover[] = [
-  { title: "The Quiet Harbor", author: "E. Alastair", tag: "Fiction", from: "#5c1d12", to: "#2f0d07", ink: "#f0deb0" },
-  { title: "Numbers That Lead", author: "R. Mensah", tag: "Business", from: "#7c3a22", to: "#3a170c", ink: "#f7f1e3" },
-  { title: "Salt & Cedar", author: "M. Followell", tag: "Memoir", from: "#c79a4c", to: "#7c3a22", ink: "#2e2018" },
-  { title: "The Ninth Room", author: "H. Barlowe", tag: "Thriller", from: "#200a06", to: "#5c1d12", ink: "#e7c77e" },
-  { title: "Little Lantern", author: "T. Okoye", tag: "Children's", from: "#e7c77e", to: "#c79a4c", ink: "#34100b" },
-  { title: "After the Tide", author: "S. Verinder", tag: "Fiction", from: "#34100b", to: "#7c3a22", ink: "#f0deb0" },
-  { title: "Beyond the Ridge", author: "N. Castellan", tag: "Fantasy", from: "#4c1710", to: "#c79a4c", ink: "#f7f1e3" },
-  { title: "Plain Truth", author: "A. Whitfield", tag: "Non-fiction", from: "#7c3a22", to: "#2f0d07", ink: "#e7c77e" },
+  { src: "/books/1.png", back: "/books/1a.png", alt: "The Outer Space by Kimberly Hopkins", tag: "Sci-Fi" },
+  { src: "/books/2.png", back: "/books/2a.png", alt: "The Sea of the Magic by Coy L. Miller", tag: "Fantasy" },
+  { src: "/books/3.png", back: "/books/3a.png", alt: "Let the Truth Speaks by Jension Lawson", tag: "Memoir" },
+  { src: "/books/4.png", back: "/books/4a.png", alt: "Keep in the Gate by Larry K. Moore", tag: "Thriller" },
+  { src: "/books/5.png", back: "/books/5a.png", alt: "The Game's King by Mathew O. Bell", tag: "Mystery" },
+  { src: "/books/6.png", back: "/books/6a.png", alt: "The Missing Person by Sarah Lukose", tag: "True Crime" },
+  { src: "/books/7.png", back: "/books/7a.png", alt: "In Fashion We Trust by Alexander Sanderson", tag: "Lifestyle" },
+  { src: "/books/8.png", back: "/books/8a.png", alt: "My Eye for Photography by Daniel Adams", tag: "Photography" },
 ];
 
+/* ---- Hero cluster ----------------------------------------
+   The three header-*.png artworks, used only in the hero. These have no
+   back cover, so they do not flip on hover. */
+export const heroCovers: Cover[] = [
+  { src: "/books/header-1.png", alt: "The History of Subway by Nathan Jones", tag: "Non-fiction" },
+  { src: "/books/header-3.png", alt: "Happy Summer by Shelby J. Miller", tag: "Lifestyle" },
+  { src: "/books/header-2.png", alt: "A Design Guide: How to Create Company Brand Guidelines by Thomas Morrison", tag: "Business" },
+];
 /* ---- Why choose us (feature strip) ------------------------ */
 export const whyUs: { icon: LucideIcon; title: string; text: string }[] = [
   { icon: Feather, title: "Your voice, kept", text: "We write with you, not over you. The book stays yours." },
@@ -266,5 +278,107 @@ export const faqs: { q: string; a: string }[] = [
   {
     q: "What if I only have an idea?",
     a: "That is enough to begin. Many of our authors start with a few notes or a voice recording, and we build from there.",
+  },
+];
+
+/* ---- Pricing plans ----------------------------------------
+   Deliberately no prices on the cards: the FAQ promises a fixed quote
+   after a conversation, so the cards sell the scope and the button
+   starts that conversation. Add a `price` field here if that changes. */
+export type Plan = {
+  name: string;
+  subtitle?: string;
+  features: string[];
+};
+
+export const plans: Plan[] = [
+  {
+    name: "Silver Plan",
+    features: [
+      "Writing or re-writing of up to 150 pages",
+      "Ghostwriting original content from your interviews, notes, or research",
+      "Editing and proofreading",
+      "Formatting and typesetting",
+      "Free cover design (front, spine, and back)",
+      "Unlimited images and photos",
+      "Extensive research",
+      "Publishing on 5 leading platforms",
+      "Amazon, Barnes & Noble, Google Play, Apple Books and more",
+      "Diverse formats: e-book, paperback, hardcover",
+      "Full ownership, and we take no royalties",
+      "Unlimited revisions",
+      "A dedicated team of expert writers and editors",
+      "Money-back guarantee, set out in writing",
+      "No hidden charges",
+      "3 to 4 weeks turnaround",
+    ],
+  },
+  {
+    name: "Gold Plan",
+    features: [
+      "Writing or re-writing of up to 250 pages",
+      "Ghostwriting original content from your interviews, notes, or research",
+      "Editing and proofreading",
+      "Formatting and typesetting",
+      "Free cover design (front, spine, and back)",
+      "Unlimited images and photos",
+      "Extensive research",
+      "Publishing on 15 leading platforms",
+      "Diverse formats: e-book, paperback, hardcover",
+      "Full ownership, and we take no royalties",
+      "Unlimited revisions",
+      "A dedicated team of expert writers and editors",
+      "Money-back guarantee, set out in writing",
+      "No hidden charges",
+      "Premium customer support",
+      "Plot development and structuring",
+      "Character development and dialogue",
+      "Genre-specific expertise",
+      "Compelling book titles and subtitles",
+      "4 to 6 weeks turnaround",
+    ],
+  },
+  {
+    name: "Platinum Plan",
+    subtitle: "(Audiobook + 12 months marketing)",
+    features: [
+      "Writing or re-writing of up to 350 pages",
+      "Ghostwriting original content from your interviews, notes, or research",
+      "Editing and proofreading",
+      "Formatting and typesetting",
+      "Free cover design (front, spine, and back)",
+      "Unlimited images and photos",
+      "Extensive research",
+      "Publishing on 25 leading platforms",
+      "Diverse formats: e-book, paperback, hardcover",
+      "Full ownership, and we take no royalties",
+      "Unlimited revisions",
+      "A dedicated team of expert writers and editors",
+      "Money-back guarantee, set out in writing",
+      "No hidden charges",
+      "Premium customer support",
+      "Plot development and structuring",
+      "Character development and dialogue",
+      "Genre-specific expertise",
+      "Compelling book titles and subtitles",
+      "Audiobook production",
+      "ISBN (International Standard Book Number)",
+      "Narrator assignment (male or female)",
+      "Professionally narrated recording of the whole book",
+      "Edited and polished audio files in the format you need",
+      "Audiobook cover design",
+      "Submission to major audiobook platforms",
+      "Royalty management and reporting",
+      "Author website with integrated payments",
+      "Social media account setup and management",
+      "Social media marketing campaigns",
+      "YouTube video trailer production",
+      "Pay-per-click (PPC) advertising",
+      "Search engine optimisation (SEO)",
+      "Content marketing",
+      "Amazon listing optimisation and keyword placement",
+      "Analytics and reporting",
+      "6 to 8 weeks turnaround",
+    ],
   },
 ];

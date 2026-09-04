@@ -15,7 +15,7 @@ export function Stats() {
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
           <div className="max-w-xl">
             <span className="eyebrow text-gold-300">Where we stand today</span>
-            <h2 className="mt-4 text-3xl text-cream sm:text-4xl">
+            <h2 className="mt-4 text-2xl text-cream sm:text-4xl">
               Built on finished books and happy authors
             </h2>
             <p className="mt-4 text-cream/75">

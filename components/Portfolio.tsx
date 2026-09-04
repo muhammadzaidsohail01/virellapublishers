@@ -7,20 +7,20 @@ import { whatsappLink } from "@/lib/site.config";
 export function Portfolio() {
   return (
     <section id="portfolio" className="scroll-mt-24 bg-cream-50">
-      <div className="container-x py-20 md:py-28">
+      <div className="container-x py-14 sm:py-20 md:py-28">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Recent work</span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-[2.75rem]">
+          <h2 className="mt-4 text-2xl sm:text-4xl lg:text-[2.75rem]">
             Books we are proud to have shaped
           </h2>
-          <p className="mt-4 text-lg text-ink-soft">
+          <p className="mt-4 text-base text-ink-soft sm:text-lg">
             A look at the range of covers and genres we handle. Your book joins good company.
           </p>
         </Reveal>
 
-        <RevealGroup className="mt-14 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+        <RevealGroup className="mt-8 sm:mt-14 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
           {covers.map((c) => (
-            <RevealItem key={c.title}>
+            <RevealItem key={c.src}>
               <div className="transition-transform duration-300 hover:-translate-y-2">
                 <BookCover cover={c} />
               </div>

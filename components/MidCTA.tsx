@@ -14,7 +14,7 @@ export function MidCTA() {
           <h2 className="text-3xl text-cream sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
             Your story deserves to be told, and told well
           </h2>
-          <p className="mt-4 text-lg text-cream/80">
+          <p className="mt-4 text-base text-cream/80 sm:text-lg">
             Send us a message today. We will talk through your idea, answer your questions,
             and show you the clearest way to a finished book.
           </p>
