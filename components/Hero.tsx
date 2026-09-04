@@ -14,8 +14,8 @@ export function Hero() {
     <section className="relative overflow-hidden">
       {/* soft background accents */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-gold/20 blur-3xl" />
-        <div className="absolute -left-32 top-40 h-[380px] w-[380px] rounded-full bg-brown/10 blur-3xl" />
+        <div className="absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-gold/20 blur-3xl transform-gpu" />
+        <div className="absolute -left-32 top-40 h-[380px] w-[380px] rounded-full bg-brown/10 blur-3xl transform-gpu" />
         <div
           className="absolute inset-0 opacity-[0.4]"
           style={{
@@ -120,7 +120,7 @@ export function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.15, ease }}
         >
-          <div className="absolute left-1/2 top-1/2 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/25 blur-3xl" />
+          <div className="absolute left-1/2 top-1/2 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/25 blur-3xl transform-gpu" />
 
           <div
             className="absolute left-[2%] top-[16%] w-[40%] -rotate-[10deg]"

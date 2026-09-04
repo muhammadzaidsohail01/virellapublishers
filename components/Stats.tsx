@@ -7,8 +7,8 @@ export function Stats() {
   return (
     <section className="relative overflow-hidden bg-maroon text-cream">
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-gold/20 blur-3xl" />
-        <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-brown/40 blur-3xl" />
+        <div className="absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-gold/20 blur-3xl transform-gpu" />
+        <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-brown/40 blur-3xl transform-gpu" />
       </div>
 
       <div className="container-x relative py-16 md:py-20">

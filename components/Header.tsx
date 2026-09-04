@@ -129,7 +129,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="btn btn-gold mt-3 w-full"
+                className="btn btn-gold mt-3 w-full whitespace-nowrap px-4 text-[13px] sm:px-[1.6rem] sm:text-base"
               >
                 <WhatsAppIcon className="h-5 w-5" />
                 Order Now on WhatsApp

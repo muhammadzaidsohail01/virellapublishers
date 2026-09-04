@@ -7,10 +7,10 @@ export function Contact() {
   return (
     <section id="contact" className="scroll-mt-24">
       <div className="container-x py-14 sm:py-20 md:py-28">
-        <div className="relative overflow-hidden rounded-3xl bg-maroon px-6 py-16 text-cream shadow-soft md:px-16 md:py-20">
+        <div className="relative overflow-hidden rounded-3xl bg-maroon px-4 py-16 text-cream shadow-soft sm:px-6 md:px-16 md:py-20">
           <div aria-hidden className="pointer-events-none absolute inset-0">
-            <div className="absolute -left-16 -top-16 h-64 w-64 rounded-full bg-gold/20 blur-3xl" />
-            <div className="absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-brown/50 blur-3xl" />
+            <div className="absolute -left-16 -top-16 h-64 w-64 rounded-full bg-gold/20 blur-3xl transform-gpu" />
+            <div className="absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-brown/50 blur-3xl transform-gpu" />
           </div>
 
           <Reveal className="relative mx-auto max-w-2xl text-center">
@@ -27,7 +27,7 @@ export function Contact() {
               href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-gold mt-8 text-base"
+              className="btn btn-gold mt-8 w-full whitespace-nowrap px-4 text-[13px] sm:w-auto sm:px-[1.6rem] sm:text-base"
             >
               <WhatsAppIcon className="h-5 w-5" />
               Order Now on WhatsApp

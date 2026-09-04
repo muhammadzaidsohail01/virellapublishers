@@ -7,7 +7,7 @@ export function MidCTA() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-brown to-maroon text-cream">
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute -right-10 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-gold/25 blur-3xl" />
+        <div className="absolute -right-10 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-gold/25 blur-3xl transform-gpu" />
       </div>
       <div className="container-x relative py-16 md:py-20">
         <Reveal className="mx-auto max-w-3xl text-center">
@@ -23,7 +23,7 @@ export function MidCTA() {
               href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-gold text-base"
+              className="btn btn-gold w-full whitespace-nowrap px-4 text-[13px] sm:w-auto sm:px-[1.6rem] sm:text-base"
             >
               <WhatsAppIcon className="h-5 w-5" />
               Order Now on WhatsApp
