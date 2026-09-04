@@ -20,14 +20,17 @@ export function TrustBar() {
         </RevealGroup>
 
         <div className="mt-10 border-t border-brown/10 pt-8 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-ink-faint">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-faint sm:text-xs sm:tracking-[0.24em]">
             Your finished book, listed where readers already shop
           </p>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          {/* On phones the bare names wrapped 2-2-2 at uneven widths and looked
+              ragged, so they become an even grid of pills. From sm up the
+              original centred row is restored untouched. */}
+          <div className="mt-5 grid grid-cols-2 gap-2.5 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-8 sm:gap-y-3">
             {retailers.map((r) => (
               <span
                 key={r}
-                className="font-display text-lg font-semibold text-brown/70 transition-colors hover:text-brown"
+                className="flex items-center justify-center rounded-xl border border-brown/12 bg-cream px-2 py-2.5 text-center font-display text-[13px] font-semibold text-brown/80 shadow-card transition-colors hover:text-brown sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:text-lg sm:text-brown/70 sm:shadow-none"
               >
                 {r}
               </span>

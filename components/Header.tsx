@@ -27,9 +27,14 @@ export function Header() {
   }, [open]);
 
   return (
-    <header id="home" className="relative z-40">
-      {/* Top contact bar */}
-      <div className="hidden bg-maroon-800 text-cream/85 md:block">
+    <>
+      {/* Anchor for the "Home" link. It cannot live on the sticky nav below:
+          a stuck element reports its pinned position, so scrolling to it
+          would not return you to the top of the page. */}
+      <div id="home" />
+
+      {/* Top contact bar - deliberately not sticky, it scrolls away */}
+      <div className="relative z-40 hidden bg-maroon-800 text-cream/85 md:block">
         <div className="container-x flex h-10 items-center justify-between text-[13px]">
           <p className="tracking-wide">
             Book writing, publishing, and marketing, handled by one caring team.
@@ -57,8 +62,11 @@ export function Header() {
         </div>
       </div>
 
-      {/* Main nav */}
-      <div
+      {/* Main nav - stays pinned while the page scrolls.
+          This has to sit directly in the page flow: a sticky element only
+          sticks within its parent's box, so while it lived inside the old
+          <header> wrapper it unpinned after that wrapper's ~110px. */}
+      <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           scrolled
             ? "bg-cream/90 shadow-[0_8px_30px_-16px_rgba(60,24,12,0.4)] backdrop-blur-md"
@@ -83,15 +91,6 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-2">
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-gold hidden sm:inline-flex"
-            >
-              <WhatsAppIcon className="h-4 w-4" />
-              Order Now
-            </a>
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
@@ -103,7 +102,7 @@ export function Header() {
             </button>
           </div>
         </nav>
-      </div>
+      </header>
 
       {/* Mobile menu */}
       {open && (
@@ -138,6 +137,6 @@ export function Header() {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
