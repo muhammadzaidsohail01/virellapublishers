@@ -54,7 +54,7 @@ export function SocialRail() {
   return (
     <div
       className="
-        fixed left-0 top-1/2 z-20 flex -translate-y-1/2 flex-col gap-1.5
+        fixed left-0 top-1/2 z-20 flex -translate-y-1/2 flex-col gap-0.5
       "
     >
       {rail.map((s) => (
@@ -66,7 +66,7 @@ export function SocialRail() {
           aria-label={s.label}
           title={s.label}
           style={s.style}
-          className="flex h-8 w-8 items-center justify-center rounded-r-md text-white shadow-card transition-[filter] duration-200 hover:brightness-110 min-[1320px]:h-9 min-[1320px]:w-9"
+          className="flex h-8 w-8 items-center justify-center rounded-r-md text-white shadow-card brightness-110 transition-[filter] duration-200 hover:brightness-125 min-[1320px]:h-9 min-[1320px]:w-9"
         >
           <s.icon className="h-[15px] w-[15px] min-[1320px]:h-4 min-[1320px]:w-4" />
         </a>
