@@ -3,7 +3,7 @@ import { Logo } from "./Logo";
 import { WhatsAppIcon } from "./WhatsAppButton";
 import { InstagramIcon, FacebookIcon, XIcon, LinkedInIcon } from "./SocialIcons";
 import { navLinks, services } from "@/lib/content";
-import { site, whatsappLink, telLink } from "@/lib/site.config";
+import { site, whatsappLink, telLink, emailLink } from "@/lib/site.config";
 
 /* Display order is deliberate: Instagram, LinkedIn, Facebook.
    `hover` carries each network's own brand colour, echoing the coloured
@@ -125,7 +125,12 @@ export function Footer() {
             )}
             {site.email && (
               <li>
-                <a href={`mailto:${site.email}`} className="flex items-center gap-2.5 text-cream/75 hover:text-cream">
+                <a
+                  href={emailLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 text-cream/75 hover:text-cream"
+                >
                   <Mail className="h-4 w-4 text-gold-300" />
                   {site.email}
                 </a>

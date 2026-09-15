@@ -19,12 +19,12 @@ export function Genres() {
         <RevealGroup className="mt-8 sm:mt-14 grid grid-cols-2 gap-3 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {genres.map((g, i) => (
             <RevealItem key={g.title} className="h-full">
-              <div className="group relative h-full overflow-hidden rounded-2xl border border-brown/12 bg-cream-50 p-4 shadow-card sm:p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/50">
-                <span className="font-display text-3xl font-bold text-gold/30 sm:text-5xl transition-colors duration-300 group-hover:text-gold/60">
+              <div className="group relative h-full overflow-hidden rounded-2xl border border-brown/12 bg-cream-50 p-3.5 shadow-card sm:p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/50">
+                <span className="font-display numerals text-xl font-bold text-gold/30 transition-colors duration-300 group-hover:text-gold/60 sm:text-5xl">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-2 text-lg sm:mt-3 sm:text-2xl">{g.title}</h3>
-                <p className="mt-2 text-[13px] text-ink-soft sm:text-base">{g.text}</p>
+                <h3 className="mt-1.5 text-balance text-sm sm:mt-3 sm:text-2xl">{g.title}</h3>
+                <p className="mt-1.5 text-pretty text-xs leading-relaxed text-ink-soft sm:mt-2 sm:text-base">{g.text}</p>
                 <div className="absolute right-0 top-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-gold/10 blur-2xl transition-opacity duration-300 group-hover:opacity-100 opacity-0" />
               </div>
             </RevealItem>

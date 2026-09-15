@@ -19,17 +19,17 @@ export function Process() {
         <RevealGroup className="mt-8 sm:mt-14 grid grid-cols-2 gap-3 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {process.map((step) => (
             <RevealItem key={step.step} className="h-full">
-              <div className="group relative h-full rounded-2xl border border-cream/15 bg-cream/[0.06] p-4 sm:p-7 transition-colors duration-300 hover:border-gold/40 hover:bg-cream/[0.1]">
+              <div className="group relative h-full rounded-2xl border border-cream/15 bg-cream/[0.06] p-3.5 sm:p-7 transition-colors duration-300 hover:border-gold/40 hover:bg-cream/[0.1]">
                 <div className="flex items-center justify-between">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/15 sm:h-12 sm:w-12 text-gold-300">
-                    <step.icon className="h-5 w-5 sm:h-6 sm:w-6" />
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold/15 text-gold-300 sm:h-12 sm:w-12 sm:rounded-xl">
+                    <step.icon className="h-4 w-4 sm:h-6 sm:w-6" />
                   </span>
-                  <span className="font-display text-3xl font-bold text-cream/10 sm:text-5xl">
+                  <span className="font-display numerals text-xl font-bold text-gold-300 sm:text-5xl">
                     {step.step}
                   </span>
                 </div>
-                <h3 className="mt-3 text-base text-cream sm:mt-5 sm:text-xl">{step.title}</h3>
-                <p className="mt-2 text-[13px] text-cream/80 sm:text-base">{step.text}</p>
+                <h3 className="mt-2.5 text-balance text-sm text-cream sm:mt-5 sm:text-xl">{step.title}</h3>
+                <p className="mt-1.5 text-pretty text-xs leading-relaxed text-cream/80 sm:mt-2 sm:text-base">{step.text}</p>
               </div>
             </RevealItem>
           ))}

@@ -52,3 +52,14 @@ export function whatsappLink(message?: string): string {
 export function telLink(phone: string): string {
   return `tel:${phone.replace(/[^\d+]/g, "")}`;
 }
+
+/**
+ * Opens Gmail's compose window already addressed to us.
+ *
+ * A plain `mailto:` link hands off to whatever mail client the device has
+ * set as default. On a desktop with none configured that click does
+ * nothing at all, which is what was happening here.
+ */
+export function emailLink(address: string = site.email): string {
+  return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(address)}`;
+}

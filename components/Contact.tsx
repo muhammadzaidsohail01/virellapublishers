@@ -1,7 +1,7 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { WhatsAppIcon } from "./WhatsAppButton";
-import { site, whatsappLink, telLink } from "@/lib/site.config";
+import { site, whatsappLink, telLink, emailLink } from "@/lib/site.config";
 
 export function Contact() {
   return (
@@ -41,7 +41,12 @@ export function Contact() {
                 </a>
               )}
               {site.email && (
-                <a href={`mailto:${site.email}`} className="flex items-center gap-2 hover:text-gold-300">
+                <a
+                  href={emailLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-gold-300"
+                >
                   <Mail className="h-4 w-4 text-gold-300" />
                   {site.email}
                 </a>

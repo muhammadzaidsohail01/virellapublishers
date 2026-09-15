@@ -188,6 +188,23 @@ body {
     background-color: color-mix(in srgb, var(--color-maroon) 6%, transparent);
   }
 
+  /* Step / genre numerals.
+     body sets font-feature-settings: "ss01","cv01", which inherits into
+     Playfair and leaves its figures oldstyle: 3, 4 and 5 hang below the
+     baseline while 6 and 8 ride high, so 01 and 04 looked misaligned even
+     though their boxes match to the pixel.
+     "lnum" puts every digit on the baseline at one height, which is the
+     fix. "tnum" is asked for too but this build of Playfair does not ship
+     tabular figures, so widths stay proportional -- harmless here, since
+     the numbers are aligned to a card edge rather than to each other.
+     Declared through font-feature-settings rather than the friendlier
+     font-variant-numeric, because the value inherited from body would
+     otherwise win. */
+  .numerals {
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
   .card-line {
     border: 1px solid color-mix(in srgb, var(--color-brown) 16%, transparent);
     background: linear-gradient(180deg, var(--color-cream-50), var(--color-cream-100));

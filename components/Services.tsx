@@ -22,12 +22,12 @@ export function Services() {
         <RevealGroup className="mt-8 sm:mt-14 grid grid-cols-2 gap-3 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
             <RevealItem key={s.title} className="h-full">
-              <div className="group card-line flex h-full flex-col rounded-2xl p-4 shadow-card sm:p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-soft">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-maroon/8 sm:h-12 sm:w-12 text-maroon transition-colors duration-300 group-hover:bg-maroon group-hover:text-gold-300">
-                  <s.icon className="h-5 w-5 sm:h-6 sm:w-6" />
+              <div className="group card-line flex h-full flex-col rounded-2xl p-3.5 shadow-card sm:p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-soft">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-maroon/8 text-maroon transition-colors duration-300 group-hover:bg-maroon group-hover:text-gold-300 sm:h-12 sm:w-12 sm:rounded-xl">
+                  <s.icon className="h-4 w-4 sm:h-6 sm:w-6" />
                 </span>
-                <h3 className="mt-3 text-base sm:mt-5 sm:text-xl">{s.title}</h3>
-                <p className="mt-2 text-[13px] leading-relaxed text-ink-soft sm:text-[15px]">{s.text}</p>
+                <h3 className="mt-2.5 text-balance text-sm sm:mt-5 sm:text-xl">{s.title}</h3>
+                <p className="mt-1.5 text-pretty text-xs leading-relaxed text-ink-soft sm:mt-2 sm:text-[15px]">{s.text}</p>
               </div>
             </RevealItem>
           ))}
